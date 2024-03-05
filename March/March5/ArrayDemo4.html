@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script>
+            var names = ["Ravi","Kalyan","Manisha","Owais","SaiTeja"];
+        </script>
+    </head>
+<body>
+    <form name="frmTest">
+        <center>
+            Select Name :
+            <select name="student">
+                <option value="Select">Select</option>
+                <script>
+                    for(var v in names) {
+                        document.writeln("<option value=" +names[v] + ">" +names[v] +
+                                "</option>");
+                    }
+                </script>
+            </select>
+        </center>
+    </form>
+</body>
+</html>

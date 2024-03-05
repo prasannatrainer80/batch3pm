@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <script>
+            var employs = ["Owais","Sohan","Harshitha",
+                            "RaviTeja","Niranjan"
+                        ];
+            var managers = ["Anvesh","Shruthi","Geetha",
+                            "Rajesh","Govind"
+                        ];
+            function show() {
+                var today = new Date();
+                frmLeave.appliedOn.value = today.toISOString().substring(0, 10);
+            }
+
+            function tat() {
+                var today = new Date();
+                var leaveEndDate = frmLeave.leaveEndDate.value;
+                var ms = Date.parse(leaveEndDate) - today.getTime();
+                var days = ms / (1000 * 60 * 60 * 24);
+                // alert(days);
+                days++;
+                if (days <= 0) {
+                    document.getElementById("errorLeaveEndDate").innerHTML 
+                        = "Leave-End Date Cannot be Yesterday's Date...".fontcolor("red");
+                    return;                    
+                } else {
+                    document.getElementById("errorLeaveEndDate").innerHTML="";
+                }
+                var leaveStartDate = frmLeave.leaveStartDate.value;
+                var ms1 = Date.parse(leaveEndDate) - Date.parse(leaveStartDate);
+                var days1 = ms1 / (1000 * 60 * 60 * 24);
+                days1++;
+                if (days1 <= 0) {
+                    document.getElementById("errorLeaveEndDate").innerHTML 
+                        = "Leave-Start Date Cannot Be Greater than Leave-End Date..".fontcolor("red");
+                    return;                   
+                } else {
+                    document.getElementById("errorLeaveEndDate").innerHTML="";
+                }
+                frmLeave.noOfDays.value = days1;
+            }
+            function leaveStartDateValid() {
+                var today = new Date();
+                var leaveStartDate = frmLeave.leaveStartDate.value;
+                var ms = Date.parse(leaveStartDate) - today.getTime();
+                var days = ms / (1000 * 60 * 60 * 24);
+                // alert(days);
+                days++;
+                if (days <= 0) {
+                    document.getElementById("errorLeaveStartDate").innerHTML 
+                        = "Leave-Start Date Cannot be Yesterday's Date...".fontcolor("red");
+                    return;                    
+                } else {
+                    document.getElementById("errorLeaveStartDate").innerHTML="";
+                }
+            }
+        </script>
+    </head>
+<body onload="show()">
+    <form name="frmLeave">
+        <table border="3" align="center">
+            <tr>
+                <th>Employ Name</th>
+                <td>
+                    <select name="employName">
+                        <option value="Select">Select</option>
+                        <script>
+                            for(var v in employs) {
+                    document.writeln("<option value="+employs[v] + ">"+
+                                employs[v] + "</option>");
+                            }
+                        </script>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Manager Name</th>
+                <td>
+                    <select name="managerName">
+                        <option value="Select">Select</option>
+                        <script>
+                            for(var v in managers) {
+                document.write("<option value=" +managers[v] + ">" +managers[v] +
+                         "</option>");
+                            }
+                        </script>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Leave Start Date</th>
+                <td>
+                    <input type="date" name="leaveStartDate" onblur="leaveStartDateValid()" />
+                    <span id="errorLeaveStartDate"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>Leave End Date</th>
+                <td>
+                    <input type="date" name="leaveEndDate" onblur="tat()" />
+                    <span id="errorLeaveEndDate"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>No.Of Days</th>
+                <td>
+                    <input type="number" name="noOfDays" readonly />
+                </td>
+            </tr>
+            <tr>
+                <th>Leave Type</th>
+                <td>
+                    <select name="leaveType">
+                        <option value="EL">EL</option>
+                        <option value="PL">PL</option>
+                        <option value="ML">ML</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Leave Status</th>
+                <td>
+                    <select name="leaveStatus">
+                        <option value="PENDING">PENDING</option>
+                        <option value="ACCEPTED">ACCEPTED</option>
+                        <option value="REJECTED">REJECTED</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Applied On</th>
+                <td>
+                    <input type="text" name="appliedOn" readonly />
+                </td>
+            </tr>
+            <tr>
+                <th>Manager Comments</th>
+                <td>
+                    <input type="text" name="managerComments" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

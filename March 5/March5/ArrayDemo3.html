@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <script>
+            var questions = [
+                   "1. HTML Stands For",
+                   "2. Java is Purely Object Oriented",
+                   "3. Javascript is Client-Side Scripting",
+                   "4. CSS Stands For",
+                   "5. What is OOPS "
+                ];
+            var questionNo = 0;
+            var totalQuestions = questions.length;
+            function show() {
+               document.getElementById("question").innerHTML = questions[questionNo];          
+            }
+            function nextQuestion() {
+                questionNo++;
+                if (questionNo == totalQuestions) {
+                    alert("No More Questions after this...");
+                    questionNo = totalQuestions - 1;                                        
+                }
+                show();
+            }
+            function prevQuestion() {
+                questionNo--;
+                if (questionNo < 0) {
+                    alert("No More Questions before this...")
+                    questionNo = 0;
+                }
+                show();
+            }
+        </script>
+    </head>
+<body onload="show()">
+    <p id="question"></p> <br/><br/>
+    <input type="button" value="Next" onclick="nextQuestion()" /> 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="button" value="Previous" onclick="prevQuestion()" />
+</body>
+</html>

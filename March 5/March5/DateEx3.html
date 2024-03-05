@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script>
+            function show() {
+                var leaveStartDate = frmData.leaveStartDate.value;
+                var leaveEndDate = frmData.leaveEndDate.value;
+                var ms = Date.parse(leaveEndDate) - Date.parse(leaveStartDate);
+                var days = ms / (1000 * 60 * 60 * 24);
+                days++;
+                var result = "";
+                result +="No.of Days between two dates are  " +days;
+                document.getElementById("result").innerHTML = result;
+            }
+        </script>
+    </head>
+<body>
+    <form name="frmData">
+        <center>
+            Leave Start Date : 
+            <input type="date" name="leaveStartDate" /> <br/><br/>
+            Leave End Date : 
+            <input type="date" name="leaveEndDate" /> <br/><br/> 
+            <input type="button" value="Show" onclick="show()" /> <br/><br/>
+            <span id="result"></span>
+        </center>
+    </form>
+</body>
+</html>
