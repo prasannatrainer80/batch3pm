@@ -1,0 +1,53 @@
+import React, {Component} from 'react';
+import  axios  from 'axios';
+
+// import { connect } from "react-redux";
+// import { bindActionCreators } from "redux";
+// import * as usersearchActions from "../../store/usersearch/actions";
+export default class usersearch extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          user : {}
+        };
+    }
+
+    handleSubmit = () => {
+      const {user} = this.state
+    
+     // alert("Welcome to " +this.state.value)
+      axios.get("https://jsonplaceholder.typicode.com/users/" +this.state.value)
+      .then(response => {
+        this.setState({
+          user : response.data 
+        })
+        // alert(users);
+        console.log(response.data)
+      })
+    }
+    
+    handleChange = (event) => {
+      this.setState({value: event.target.value});
+    }
+      
+    render() {
+      const {user} = this.state
+      return <div className="component-usersearch">
+      <form>
+        <label>
+        User Id:
+        <input type="text" value={this.state.value} onChange={this.handleChange} />
+      </label>
+        <input type="button" value="Search" onClick={this.handleSubmit} />
+      </form>
+      Id :      {user.id} <br/>
+Name : {user.name} <br/>
+User Name : {user.username}
+
+        </div>;
+    }
+  }
+// export default connect(
+//     ({ usersearch }) => ({ ...usersearch }),
+//     dispatch => bindActionCreators({ ...usersearchActions }, dispatch)
+//   )( usersearch );
