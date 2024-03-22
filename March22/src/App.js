@@ -5,6 +5,7 @@ import CustomerShow from './components/customershow/customershow';
 import Login from './components/login/login';
 import MenuShow from './components/menushow/menushow';
 import WalletShow from './components/walletShow/walletShow';
+import CustomerOrders from './components/customerorders/customerorders';
 import {
   BrowserRouter,
   Routes,
@@ -21,6 +22,7 @@ function App() {
           <Route path='/customerShow' element={<CustomerShow />} />
           <Route path='/menuShow' element={<MenuShow />} />
           <Route path="/walletShow" element={<WalletShow />} /> 
+          <Route path="/customerOrders" element={<CustomerOrders />} /> 
         </Routes>
       </BrowserRouter>
 

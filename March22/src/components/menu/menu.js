@@ -20,6 +20,8 @@ export default class menu extends Component {
           <Link to="/menuShow">Menu Show</Link>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <Link to="/walletShow">Wallet Show</Link>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <Link to="/customerOrders">Customer Orders</Link>
       </div>;
     }
   }
