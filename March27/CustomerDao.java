@@ -18,7 +18,7 @@ public class CustomerDao {
 	public String authenticate(String user,String pwd) {
 		String cmd = "select count(*) cnt from Customer where Cus_UserName=? "
 				+ " AND Cus_Password=?";
-		List str=jdbc.query(cmd,new Object[] {user,pwd}, new RowMapper() {
+		List str=jdbc.query(cmd,new Object[] {user, pwd}, new RowMapper() {
 			@Override
 			public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
 				// TODO Auto-generated method stub
