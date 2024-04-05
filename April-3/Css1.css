@@ -1,0 +1,15 @@
+p {
+    background-color: blue;
+    color: orange;
+}
+div {
+    background-color: yellow;
+    height: 300px;
+    width: 300px;
+    color: purple;
+}
+h1 {
+    font-size: 48px;
+    font-style: italic;
+    font-weight: bold;
+}
