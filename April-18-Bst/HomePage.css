@@ -1,3 +1,12 @@
+/* FONT AWESOME & not necessary for functions */
+
+@import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
+body {
+    padding-top: 15px;
+    background-color: #f9f9f9;
+}
+
+
 h1.thick-heading {
     clear: both;
     color: #aaa;
@@ -12,3 +21,4 @@ h1.thick-heading {
     opacity: 1;
     margin-top: 92px;
 }
+

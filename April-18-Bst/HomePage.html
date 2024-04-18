@@ -1,6 +1,84 @@
 <html>
     <head>
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <style>
+            .mail-box {
+            border-collapse: collapse;
+            border-spacing: 0;
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+        }
+        
+        .mail-box aside {
+            display: table-cell;
+            float: none;
+            height: 100%;
+            padding: 0;
+            vertical-align: top;
+        }
+        
+        .mail-box .sm-side {
+            background: none repeat scroll 0 0 #e5e8ef;
+            border-radius: 4px 0 0 4px;
+            width: 25%;
+        }
+
+        .mail-box .lg-side {
+            background: none repeat scroll 0 0 #fff;
+            border-radius: 0 4px 4px 0;
+            width: 75%;
+        }
+        
+        .mail-box .sm-side .user-head {
+            background: none repeat scroll 0 0 #00a8b3;
+            border-radius: 4px 0 0;
+            color: #fff;
+            min-height: 80px;
+            padding: 10px;
+        }
+        
+        .user-head .inbox-avatar {
+            float: left;
+            width: 65px;
+        }
+        
+        .user-head .inbox-avatar img {
+            border-radius: 4px;
+        }
+
+        .user-head .user-name {
+            display: inline-block;
+            margin: 0 0 0 10px;
+        }
+        
+        .user-head .user-name h5 {
+            font-size: 14px;
+            font-weight: 300;
+            margin-bottom: 0;
+            margin-top: 15px;
+        }
+        
+        .user-head .user-name h5 a {
+            color: #fff;
+        }
+        
+        .user-head .user-name span a {
+            color: #87e2e7;
+            font-size: 12px;
+        }
+
+        a.mail-dropdown {
+            background: none repeat scroll 0 0 #80d3d9;
+            border-radius: 2px;
+            color: #01a7b3;
+            font-size: 10px;
+            margin-top: 20px;
+            padding: 3px 5px;
+        }
+
+        </style>
+         <!-- Bootstrap Core CSS -->
+    <link href="http://www.tutorialspoint.com/bootstrap/css/bootstrap.min.css" rel="stylesheet">
        <!-- Custom CSS -->
     <link href="HomePage.css" rel="stylesheet">
     </head>
@@ -21,7 +99,24 @@
         <h1 class="thick-heading">
             ||Admin Example||
           </h1>
-    
+          <div class="featurette" id="about">
+            <!------------------------code---------------start---------------->
+            <div class="mail-box">
+                <aside class="sm-side">
+                    <div class="user-head">
+                        <a class="inbox-avatar" href="javascript:;">
+                            <img width="55" hieght="55" src="photo.jpg">
+                        </a>
+                        <div class="user-name">
+                            <h5><a href="#">Prasanna p.</a></h5>
+                            <span><a href="#">prassucp@gmail.com</a></span>
+                        </div>
+                        <a class="mail-dropdown pull-right" href="javascript:;">
+                            <i class="fa fa-chevron-down"></i>
+                        </a>
+                    </div>
+                </aside>
+            </div>
     </div>
 </body>
 </html>
