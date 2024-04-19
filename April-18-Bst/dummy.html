@@ -1,11 +1,18 @@
 <html>
     <head>
         <script>
-            function inbox() {
-                var mails = ["from Excelr", "Tutorial","Hello All", "From Sonix",
+            var mails = ["from Excelr", "Tutorial","Hello All", "From Sonix",
                 "Resume Pending"
                 ];
+            function inbox() {
+                
                 document.getElementById("iresult").innerHTML = mails.length;
+            }
+
+            function inboxAdd() {
+                var mailData = frmInbox.mailText.value;
+                mails.push(mailData);
+                inbox();
             }
         </script>
         <style>
@@ -249,8 +256,11 @@
                     <a href="#"><i class=" fa fa-trash-o"></i> Trash</a>
                 </li>
             </ul>
-           
-
+            <form name="frmInbox">
+                Mail Text : 
+                <input type="text" name="mailText" /> <br/><br/>
+                <input type="button" value="Add" onclick="inboxAdd()" />
+            </form>
     </div>
 </body>
 </html>

@@ -1,57 +1,6 @@
 <html>
     <head>
-        <script>
-            function inbox() {
-                var mails = ["from Excelr", "Tutorial","Hello All", "From Sonix",
-                "Resume Pending"
-                ];
-                document.getElementById("iresult").innerHTML = mails.length;
-            }
-        </script>
         <style>
-
-        ul.inbox-nav {
-            display: inline-block;
-            margin: 0;
-            padding: 0;
-            width: 20%;
-        }
-        
-        .inbox-divider {
-            border-bottom: 1px solid #d5d8df;
-        }
-        
-        ul.inbox-nav li {
-            display: inline-block;
-            line-height: 45px;
-            width: 100%;
-        }
-        
-        ul.inbox-nav li a {
-            color: #6a6a6a;
-            display: inline-block;
-            line-height: 45px;
-            padding: 0 20px;
-            width: 100%;
-        }
-        
-        ul.inbox-nav li a:hover,
-        ul.inbox-nav li.active a,
-        ul.inbox-nav li a:focus {
-            background: none repeat scroll 0 0 #d5d7de;
-            color: #6a6a6a;
-        }
-        
-        ul.inbox-nav li a i {
-            color: #6a6a6a;
-            font-size: 16px;
-            padding-right: 10px;
-        }
-        
-        ul.inbox-nav li a span.label {
-            margin-top: 13px;
-        }
-        
 
         .inbox-head {
             background: none repeat scroll 0 0 #41cac0;
@@ -87,7 +36,7 @@
             padding: 0 20px;
         }
 
-        .mail-box {
+            .mail-box {
             border-collapse: collapse;
             border-spacing: 0;
             display: table;
@@ -180,18 +129,13 @@
             padding: 20px;
         }
 
-        .inbox-body .modal .modal-body input,
-        .inbox-body .modal .modal-body textarea {
-            border: 1px solid #e6e6e6;
-            box-shadow: none;
-        }
         </style>
          <!-- Bootstrap Core CSS -->
     <link href="http://www.tutorialspoint.com/bootstrap/css/bootstrap.min.css" rel="stylesheet">
        <!-- Custom CSS -->
     <link href="HomePage.css" rel="stylesheet">
     </head>
-<body onload="inbox()">
+<body>
     <nav role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -204,53 +148,35 @@
             </div>
         </div>
     </nav>
+    
+    <!-- Page Content -->
     <div class="container">
+
         <h1 class="thick-heading">
-            ||Admin Example||
-          </h1>
-          <div class="featurette" id="about">
+        ||Admin Example||
+      </h1>
+
+        <!-- First Featurette -->
+        <div class="featurette" id="about">
             <!------------------------code---------------start---------------->
             <div class="mail-box">
                 <aside class="sm-side">
-                    <div class="user-head" style="width: 300px;">
+                    <div class="user-head">
                         <a class="inbox-avatar" href="javascript:;">
-                            <img width="55" hieght="55" src="photo.jpg">
+                            <img width="64" hieght="60" src="http://www.tutorialspoint.com/about/images/mohtashim.jpg">
                         </a>
                         <div class="user-name">
-                            <h5><a href="#">Prasanna p.</a></h5>
-                            
-                            <span><a href="#" id="email" style="color: brown;">prassucp@gmail.com</a></span>
+                            <h5><a href="#">Mohtashim M.</a></h5>
+                            <span><a href="#">contact@tutorialspoint.com</a></span>
                         </div>
                         <a class="mail-dropdown pull-right" href="javascript:;">
                             <i class="fa fa-chevron-down"></i>
                         </a>
-                </div>
-                <div class="inbox-body">
-                    <a href="#myModal" data-toggle="modal" title="Compose" class="btn btn-compose" style="color: white; font-size: 18;background-color: brown;">
-                          Compose
-                      </a>
+                    </div>
                 </aside>
             </div>
-            <ul class="inbox-nav inbox-divider">
-                <li class="active">
-                    <a href="#"><i class="fa fa-inbox"></i> Inbox <span class="label label-danger pull-right" id="iresult"></span></a>
-
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-envelope-o"></i> Sent Mail</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-bookmark-o"></i> Important</a>
-                </li>
-                <li>
-                    <a href="#"><i class=" fa fa-external-link"></i> Drafts <span class="label label-info pull-right">30</span></a>
-                </li>
-                <li>
-                    <a href="#"><i class=" fa fa-trash-o"></i> Trash</a>
-                </li>
-            </ul>
-           
-
+        </div>
     </div>
+
 </body>
 </html>
