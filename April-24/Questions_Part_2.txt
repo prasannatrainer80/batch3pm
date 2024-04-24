@@ -1,0 +1,20 @@
+1) Display all records from agent table
+
+2) Display all records whose gender is Male
+
+3) Display as AgentId, Firstname,lastname, city, state, as if maritalstatus is 0 then 'unmarried' if 1 then 'married'
+
+4) Display all agents who born before 1985
+
+5) Display all agent details who are from USA country
+
+6) Display info whose agent name starts with 'S'
+
+7) Display all records from Policy Table
+
+8) Disply as if paymentMode is 1 then 'Yearly' 2 'Half-Yearly' 3 then 'Quarterly'
+
+9) Display all policies which are registered in 2010
+
+10) Display all records whose AnnualPremium is > 100000
+
