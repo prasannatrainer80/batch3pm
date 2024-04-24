@@ -1,0 +1,126 @@
+Traditional Storage of data in file system leads to following problems
+
+-> No Security to the data
+
+-> Parallel accessing not possible
+
+-> Not able to store various formats of data
+
+-> Everytime, it creates duplicates copies of the file, as the data not updated in master document. 
+
+To overcome these problems, we need the help of database. 
+
+Database : A database is set of interrelated files, stored with min. redundancy to serve many users work concurrently. 
+
+DBMS : The software that which allows you to perform transactions on data like adding new data, 
+modifying already existing data and removing unwanted data known as DBMS. 
+
+Objectives : 
+_____________
+
+	-> Provides an efficient and convinient env. that which allows you to store data in and retrieve data 
+
+	-> Granting access on data to the users based on their credentials.
+
+
+Drawbacks : 
+______________
+
+1) Data Redundancy : Repetition of data. 
+
+2) Risk to Data Integrity : Correctness of Data. 
+
+3) Data Isolation : 
+
+4) Difficult Access to Data
+
+5) Unsatisfactory Security Measures 
+
+Data Model : It is the description of the org. of data in the database. It also describes the relationship among the data and any constraints that have to be defined on data. 
+
+Data Models are classified into 2 types known as
+
+(i) Object Based Model
+
+(ii) Record Based Model 
+
+Object-based Logical model : Focuses on describing the data, and the relationship among the data and any constraints defined. 
+
+Object Based model, we can implement by using ER diagrams (Entity-Relationship) 
+
+An entity is a thing, that which can be easily identified.  A person we call as an entity, a place we call as an entity. 
+
+Entity can be represented using Rectangle 
+
+There are various types of entities as 
+
+1) Regular Entities : These entities will exist without depending on any other entity. 
+
+	Employ entity will exist without depending on that.
+
+2) Weak Entities
+
+	Bonus, TakeHome, LossOfPay these entities depends on Employ entity. 
+
+Relationship : It is an association among various entities. 
+
+There are 3 types of relationships konwn as
+
+1) One to One : One field in first entity exactly matches with one field in second entity. 
+
+2) One to Many : One field in the first entity exactly matches with many fields in the second entity. 
+
+3) Many to Many : Many field(s) in the first entity exactly matches with many fields in the second entity. 
+
+Record Based Models : 
+
+1) Hierarchical model : Data is represented in the form of tree, data in hierarchical model is represented by a collection of records and relationships between the data are represented by links. 
+
+2) Network Model : similar to hierarchical model in the way that the data and the relationships among them are represented in the form of records and links. You can represent the records in the daabase graphically. 
+
+3) Relational Model : A table in the database has fixed record length with fixed number of attribute or fields. 
+
+Keys : A RDBMS uses associative addressing, that is it identifies and lcoates rows by value. The physical address is transparent to the user. Therefore, relational system require keys. 
+
+	Employ(Empno, name, Gender, Salary, SalaryDate, Dept, AadharNo, Pancard, Status) 
+
+1) Candidate Key : Any key that which uniquely identifies rows of a table known as candidate key. (Empno, AadharNo, Pancard)
+
+2) Primary Key : One of the candidate key needs to be chosen as primary key based on priority. (Empno) 
+
+	Primary key cannot be NULL
+	Primary Key cannot be duplicated.
+Anytime if you want to retrieve data, functionally depend on primary key only. 
+
+*** Primary key is the only guaranteed way to retrive data from database tables ***
+
+3) Altenate Key : Any key that which is candidate key, but not primary key known as alternate key. (AadharNo, PanCard) 
+
+4) Composite Key : Any key that which uniquely identifies rows of a table made up of more than one attribute known as composite key. If single attribute inadequate to produce uniqueness on the table records, then we need the help of composite key. As above table, Empno is primary key, then next month salary i cannot insert as empno duplicated.  So, please make composite primary key on (Empno+SalDate), then empno will exist multiple times, SalDate exists multiple times, but combination not to be repeated. 
+
+5) Foreign Key : Primary key in the parent table will be foreign key in the child table. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
