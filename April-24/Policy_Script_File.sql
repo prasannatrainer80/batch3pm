@@ -1,4 +1,4 @@
-use infinite;
+use hexapractice;
 
 drop table if exists policy;
 
