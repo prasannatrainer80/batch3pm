@@ -1,0 +1,162 @@
+Data Types : 
+______________
+
+int
+
+numeric(9,2) -> Total 9 digits in that 2 are decimal places 
+
+char
+
+varchar
+
+date 
+
+time
+
+datetime
+
+enum
+
+The difference between char and varchar is, if you specify char(10) and used only 4 chars, then remaining 6 chars are wasted as redundancy is high
+
+but, if you take varchar(10) and used only 4 chars, remaining 6 chars are added back to memory. 
+
+by default mysql follows yyyy-MM-dd format to insert or update date field(s) 
+
+ENUM allows you to enter only group of valid values.  Example 
+
+i want to enter gender value as MALE or FEMALE 
+
+enum('MALE','FEMALE')
+
+
+Employee 
+  
+    Empno (int) Primary Key
+    Name varchar(30) NOT NULL
+    Gender ENUM('MALE','FEMALE') 
+    Dept varchar(30)
+    Desig varchar(30)
+    Basic Numeric(9,2) 
+
+
+EmployPayroll
+
+   empno (INT) Primary Key
+   name  varchar(30) NOT NULL
+   gender ENUM(MALE, FEMALE)
+   salary  numeric(9,2) 
+   salaryDate Date
+   ManagerId INT 
+
+Please make primary key on Empno + SalaryDate
+
+________________________________________________________________________________________________________
+
+EmployDetails
+    Empno+, Name, Gender, Department, Desig,Basic
+LeaveDetails
+    LeaveId+, EmpNo-, LeaveStartDate, LeaveEndDate, LeaveReason, LeaveType, ManagerComments 
+
+
+LeaveDetails is the child table for EmployDetails, 
+
+as Empno is primary key in EmployDetails table, and foreign key in LeaveDetails table. 
+
+
+Restaurant(RestaurantID+, RestaurantName, City, Location, Rating, MobileNo, Email)
+
+Menu(MenuID+, RestaurantID-, ItemName, Price, ItemType) 
+
+ResturantId is foreign key in Menu Table, its primary key in Resturant Table 
+
+MenuId make it as auto-increment
+
+_______________________________________________________________________________________________________________
+
+Alter Command : ALlows you to modify the table structures. 
+
+	-> Modify the table strucutre, add new field, modify new field and remove the existing field, adding and dropping constraints. 
+
+Alter command how to add primary key constraint 
+
+Alter table table_name add primary key(field_name);
+
+Modify the field size
+
+Alter table Table_name modify field data_type(size) 
+
+Add new fields to the table as mobile and email
+
+Drop the database field status
+
+Alter table table_name drop column colum_name;
+
+Truncate : This command allows you delete entire records of table. 
+
+Truncate table table_name 
+
+This command is more dangerous as while using this command please think and use. 
+
+
+The same job we can do by using Delete command. 
+
+What is difference between Delete and Truncate is 
+
+Delete Command allows you to rollback the records, where truncate command will not allows you to rollback.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
