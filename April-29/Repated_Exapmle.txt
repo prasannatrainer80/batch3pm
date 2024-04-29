@@ -1,0 +1,60 @@
+
+Bank(AccountNO,FirstName,LastName,City,State,Amount,CheqFacil,BankId,BankCity,BankState,BankZipcode,Country,
+TranId,TranAmount,TranType)
+
+First Normal Form : Atomic values, but TranId,TranAmount,TranType are repeated multiple times. 
+
+Insert : Tran Details cannot be inserted at the time of creating account. 
+
+Update : BankCity,BankState all are repeated multiple times, if bank address changes it needs to reflect to all customers. 
+
+Delete : If any customer account closes then the bank details also lost. 
+
+1NF inadequate 
+
+2NF : Functional Dependency : attribute A needs to depend on Attribute B 
+
+AccountNo -> FirstName  {Yes}
+	  -> LastName {Yes}
+	  -> City {Yes}
+	  -> State {Yes}
+	  -> Amount {Yes}
+	  -> CheqFacil {Yes}
+	  -> BankCity {Yes}	
+	  -> BankID {Yes}
+	  -> BankState {Yes}
+	  -> BankZipcode {Yes}
+	  -> TranId {No}
+	  -> TranType {No}
+	  -> TranAmount {No} 
+
+*** Find and remove attribues that are not functionally depend on whole key
+
+   Group the remaining attributes
+
+By Applying 2NF
+
+Bank(AccountNO+,FirstName,LastName,City,State,Amount,CheqFacil,BankId,BankCity,BankState,BankZipcode,Country)
+Trans(AccountNo-,TranId+,TranAmount,TranType)
+
+Insert : Bank Details are only entered once any account holder record inserts
+
+Update : BankID, BankCity .... repeated multiple times, if address changes we need to manually update
+
+Delete : If account closed by customer then bank details also lost. 
+
+So 2NF inadequate 
+
+By applying 3NF
+
+Third Normal Form : it must be in 2NF and attribute A needs to depend on Attribue B not transitively
+
+By applying 3NF 
+
+	-> Find and remove attributes that are transitively depend on whole key
+	-> Group the remaining attributes. 
+
+
+Bank(BankId,BankName,BankCity,BankState,BankZipcode,BankCountry)
+Customer(AccountNO+,FirstName,LastName,City,State,Amount,CheqFacil,BankId-)
+Trans(AccountNo-,TranId+,TranAmount,TranType)

@@ -1,0 +1,359 @@
+
+Normalization is the process of breaking down the complex table structures into simple table structures, so that we can make defect free database to the client. 
+
+We cannot divide the tables into parent and child directly, for this we need to follow certain rules. 
+
+By using Normalization
+ you can reduce the redundancy in a table and eliminate the problems of inconsistency and disk space usage.
+
+To implement those, we have various normal forms as 
+
+1) First Normal Form
+
+2) Second Normal Form
+
+3) Third Normal Form
+
+4) BCNF (Boyce-Codd Normal Form) 
+
+Once basic rule in normalization is it is not necessary to meet upto 3NF or BCNF everytime, if you table design sorted out in 1NF dont hit 2NF, if it is solved in 2NF leave ther. 
+
+
+PROJECT(Ecode,Ename,DeptNo,DeptName,DEPTHEAD,PROJCODE,HOURS)
+
+E001,SCOTT,D123,Java,MIKE,{P012,P015,P016},{100, 250, 22} 
+
+Assume, we have the above data in table. then see what normal form says. 
+
+First Normal Form : A table said to be in 1NF, when each cell contains precisely one value. Atomic Values.  
+
+Don't enter any comma separated values, if multiple values comes please move to another row. As Each contains precisely atomic values. 
+
+By Applying 1NF, 
+PROJECT(Ecode,Ename,DeptNo,DeptName,DEPTHEAD,PROJCODE,HOURS)
+
+E001,SCOTT,D123,Java,MIKE,P012,100
+E001,SCOTT,D123,Java,MIKE,P015,250
+E001,SCOTT,D123,Java,MIKE,P016,22
+
+If you want to check the table completely normalized or not, then we need to check for 
+
+INSERT : The department of the particular employee cannot be recorded until the employee is assigned a project. 
+
+
+UPDATE : The Employee Code, Department Name, and department head are repeated several times, if an employee is transferred to another dept. this change will have to be recorded in every row of the EMPLOYEE table pertaining to that employee. 
+
+DELETE : When an employee completes work on the project, the employee's record to be deleted. The info. regarding the department to which the emplyee belongs will also to be lost. 
+
+So, w.r.t. 1NF is inadquate, so we need to move th 2NF. 
+
+Second Normal Form (2NF) : A table said to be in 2NF, at first it must be in 1NF, and every attribute needs to functionally depend on wholse key but not partially. 
+
+Attribute A functionally depend on Attribute B, if partially depends dont put in same table.
+
+Guidelines : 
+_____________
+
+	-> Find and Remove Attributes that are functionally depend on primary key
+
+	-> Group the remaining attributes. 
+
+So, by applying 2NF
+
+PROJECT(Ecode,Ename,DeptNo,DeptName,DEPTHEAD,PROJCODE,HOURS)
+
+Ecode is the key attribute, then 
+
+Ecode -> Ename  (Yes) 
+Ecode -> DeptNo (Yes)
+Ecode -> DeptName (Yes)
+Ecode -> DeptHead (Yes) 
+Ecode -> ProjCode (No)
+Ecode -> Hours (No) 
+
+Which is funtionally depend keep on same time and name the table properlty, which is not depending move to another table and apply parent and child relationship. 
+
+By applying 2NF, 
+
+Employee(Ecode+, Ename, DeptNo,DeptName,DeptHead) 
+Project(ProjCode,Ecode-,Hours)
+
+In Project Table ProjCode+Ecode is composite primary key. 
+
+
+Insert : The DEPTHEAD of a new dept that does not have any employees at the present cannot be entered in the DEPTHEAD column.
+
+Update : the DEPTHEAD is repeated several times, hence if a dept head moves to another dept, the change will have to be made consistently across the table. 
+
+Delete : If the record of the employee is deleted, then the information regarding the head of the dept will also to be deleted. Hence there will be a loss of information. 
+
+-- 2NF is inadequate. 
+
+So, we need to move to 3NF
+
+Third Normal Form (3NF) : A table said to be in 3NF, at first it must be in 2NF, and each attribute needs to depend on whole key but not transitively. 
+
+If any trasitive dependency is there then move to another table. 
+
+Guidlines : 
+
+	-> Find and Remove attributes that are transitively depend on whole key
+
+	-> Group the remaining attributes. 
+
+*** By applying 3NF ***
+
+
+Employee(Ecode+, Ename, DeptNo,DeptName,DeptHead) 
+
+
+Ecode -> Ename    (Yes) {No Transitive Dependency}
+
+Ecode -> DeptNo   (No) {Transitive Dependency}
+
+DeptName -> (No) {Transitive Dependency}
+
+DeptHead -> (No) {Transitive Dependency} 
+
+Dept(DeptNo,DeptName,DeptHead)
+Employ(ECode,DeptNo,Ename)
+
+Final Tables are 
+
+Dept(DeptNo+,DeptName,DeptHead)
+Employ(ECode-,DeptNo+,Ename)
+Project(ProjCode,Ecode-,Hours) {ProjCode + Ecode} 
+
+_________________________________________________________________________________________________________
+
+Student(StudentId,StudentName,Course,Spec,CollegeId,CollegeName,CollegeAddress,StudentPermanentAddress,
+StudentPresentAddress,StudentEmergencyAddress,Subject1, MobileNO,Subject2,Cgpa,ExamID,ExamName,CertificateId,CertificateInf,Grade)
+
+-- Types of Attributes
+
+
+-> Value Attribute  -> StudentName,Course,Spec,CollegeId
+
+-> Key Attribute  -> StudentId, CollegeID, CertificateId
+
+-> Multi-Valued Attribute -> MobileNo 
+
+Mobileno -> Number1, Number2 
+
+Multi-Valued attribute contains multiple values.
+
+-> Composite Attribute -> Address Contains {Address1, Address2, City, State, ZipCode, Country}
+
+Composite attribute contains combination of value attributes. 
+
+Address contains 6 fields as (Address1,Address2,City,State,ZipCode,Country) 
+
+-> Derived Attribute -> Cgpa, Grade 
+
+
+Student(StudentId,StudentName,Course,Spec,CollegeId,CollegeName,CollegeAddress,StudentPermanentAddress,
+StudentPresentAddress,StudentEmergencyAddress, MobileNO,Cgpa,ExamID,ExamName,CertificateId,CertificateInf,Grade)
+
+1NF Atomic Values : 
+
+Insert : Student Exam Records and Certificate records are not registered at the time of admission. 
+
+Update : If college Information changes, then we need to update for all the students pertaining to that college as its tedious. 
+
+Delete : If a students completed his course, his details, college details, exam details, cert details all are deleted. 
+
+So, 1NF inadequate in this situation. 
+
+Second Normal Form (2NF) : A table said to be in 2NF, at first it must be 1NF, and every attribute needs to depend functioally on whose key but not partially. 
+
+	-> Find and remove attributes that are functionally depend on whole key but not partially
+
+	-> Group the remaining attributes. 
+
+*** By applying 2NF ***
+
+
+Student(StudentId,StudentName,Course,Spec,CollegeId,CollegeName,CollegeAddress,StudentPermanentAddress,
+StudentPresentAddress,StudentEmergencyAddress, MobileNO,Cgpa,ExamID,ExamName,CertificateId,CertificateInf,Grade)
+
+
+StudentId -> StudentName {Yes}
+	  -> Course {Yes}
+	  -> Spec {Yes}
+	  -> CollegeId {Yes}
+	  -> CollegeName {Yes}
+	  -> MobileNO {Yes}
+	  -> Cgpa {No}
+	  -> ExamId {No}
+	  -> ExamName {No}
+	  -> CertificateID {No}
+	  -> CertificateInfo {No}
+	  -> Grade {No} 
+
+
+Student(StudentId+,StudentName,Course,Spec,CollegeId,MobileNo)
+ExamDetails(StudentId-,Cgpa,ExamId,ExamName,CertificateId,CertificateInfo,Grade) 
+
+_____________________________________________________________________________________________
+
+
+Student(StudentId+,StudentName,Course,Spec,CollegeId,CollegeName,CollegeMobileNo)
+ExamDetails(StudentID-,ExamId,ExamName,Cgpa) {ExamId+StudentId} Primary Key
+Certificate(StudentId-,CertificateId+,CertificateInfo,Grade)
+
+
+Insert : The college details not entered still the student registers 
+
+Update : CollegeID, CollegeName, CollegeMobileNo are repeated multiple times, then if collegeDetails changes the info needs to be reflected to all corresponding students. 
+
+Delete : If any student complets his course, his details are deleted corresponding to the college he/she studied. 
+
+So, 2NF inadequate in this situation, so we need to move to 3NF as transitive dependency between student and college. 
+
+Third Normal Form : A table said to be in 3NF, at first it must be in 2NF, and every attribute needs to depend on whole key but not transitively. 
+
+	-> Find and Remove attributes that are transitively depend on whole key
+
+	-> Group the remaining attributes
+
+Student(StudentId+,StudentName,Course,Spec,CollegeId,CollegeName,CollegeMobileNo)
+
+Here College details are transitively depend on StudentId, So,
+
+College(CollegeId+,CollegeName,CollegeMobileNo)
+Student(StudentId+,StudentName,Course,Spec,CollegeID-)
+
+Now the final Tables are 
+
+College(CollegeId+,CollegeName,CollegeMobileNo)
+Student(StudentId+,StudentName,Course,Spec,CollegeID-)
+ExamDetails(StudentID-,ExamId,ExamName,Cgpa) {ExamId+StudentId} Primary Key
+Certificate(StudentId-,CertificateId+,CertificateInfo,Grade)
+
+
+_________________________________________________________________________________________________
+
+
+College(CollegeId+,CollegeName,CollegeMobileNo) CollegeId Primary Key
+Course(CourseId,Spec,CollegeId-) CourseId Primary Key.
+Student(StudentId+,StudentName,CourseID-,CollegeID-)
+ExamDetails(StudentID-,ExamId,ExamName,Cgpa) {ExamId+StudentId} Primary Key
+Certificate(StudentId-,CertificateId+,CertificateInfo,Grade)
+
+___________________________________________________________________________________________________
+
+Student(Sid,PresentAddress,PermanentAddress,EmergencyAddress) 
+
+AddressType(AddressTypeId,AddTypeInfo)
+1,'PERMANENT'
+2, 'PRESENT'
+3, 'EMERGENCY'
+
+Address(AddressId,Address1,Address2,City,State,ZipCode,Country,AddressTypeId)
+
+1,'Guindy','RailyWaystation','Chennai','TN',858823,'INDIA',1
+2,'Kukatpally','Pragathi Nagar','hyderabad','TS',499523,'INDIA',2
+3,'T Nagar','Near Kovali','CHENNAI','TN',900422,'INDIA',3
+4,'Electronic City','Phase II','Bangalore','KA',858823,'INDIA',1
+5,'Kukatpally','Pragathi Nagar','hyderabad','AP',499523,'INDIA',2
+6,'Hope Firm','Near Big Bajar','Bangalore','KA',900422,'INDIA',3
+7,'ASRAO Nagar','Near Status','Secunderabad','TS',858823,'INDIA',1
+8,'Padmarao Nagar','Near Skandhagiri','Secunderabad','TS',499523,'INDIA',2
+9,'Neredmet','Near x roads','Secunderabad','TS',900422,'INDIA',3
+
+
+Student(StudentId,Sname,PresentAddress,EmergencyAddress,PermanentAddress)
+
+1,'Karthik',7,9,8
+2, 'Priya Darshan',4,6,5
+
+_________________________________________________________________________________________________________
+
+
+CourseDeails(CourseId,CourseName,Fee,StudentId,StudentName,InstallmentFee,IntallmentDate,FacultyID, FacultyName,Specialization) 
+
+1NF : A table said to be in 1NF as each cell contains precisely one value. 
+
+Insert : Students details are not entered when you enter the course. 
+
+Update  : CourseId, CourseName are repeated multiple times, if any course details are changed needs to reflected to all students. 
+
+Delete : If any course removed, the corresponding student details also removed. Then 1NF inadequte. 
+
+2NF : 
+
+A table said to be in 2NF, at first it must be in 1NF, and every attribute funtioally depend on whole key but not partially. 
+
+CourseDeails(CourseId,CourseName,Fee,StudentId,StudentName,InstallmentFee,IntallmentDate,FacultyID, FacultyName,Specialization) 
+
+
+By Applying 2NF
+
+CourseID -> CourseName   (Yes)
+	 -> Fee  (Yes) 
+	 -> StudentID (No)
+	 -> StudentName (No)
+	 -> InstallmentFee (No)
+	 -> InstallmentDate (No)
+	 -> FacultyId (No)
+	 -> FacultyName (No)
+	 -> Specialization (No) 
+
+--> Find and remove attributes that are not functionally depend on whole key
+
+--> Group the remaining attributes
+
+By applying 2NF 
+
+Courses(CourseId+,CourseName,Fee)
+Students(StudentID+,StudentName,CourseId-,InstallmentFee,InstallMentdate,FacultyId,FacultyName,Spec) 
+
+
+Courses(CourseId+,CourseName,Fee)
+Students(StudentID+,StudentName,CourseId-,FacultyId,FacultyName,Spec) 
+InstallMent(StudentID-,InstallmentFee,InstallMentdate)
+
+Insert : The faculty details are not entered till student registers (Transitive Dependency) 
+Update : FacultyId, FacultyName repeated multiple times, if faculty moves the record to be updated in all occurrences
+
+Delete : If student Completes the course, then the student records to be deleted. But all the records corresponding to Faculty also to be deleted 
+
+2NF Inadequate : 
+
+3NF : A table said to be in 3NF, at first it must be in 2NF and every attribute not to depend transitively on whole key. 
+
+	-> Find and remove attributes that are transitively depends on whole key
+
+	-> Group the remaining attributes. 
+
+By Applying 3NF
+
+
+Courses(CourseId+,CourseName,Fee)
+Faculty(FacultyId+,FacultyName,Spec)
+Students(StudentID+,StudentName,CourseId-,FacultyID-) 
+InstallMent(StudentID-,InstallmentFee,InstallMentdate)
+
+_________________________________________________________________________________________
+
+First Normal Form   -> Atomic Values (each cell contains precisely one value)
+
+Second Normal Form -> Functional Dependency  
+
+Third Normal Form -> Transitive Dependency 
+
+Differnce between functional (vs) transitive 
+
+Functional dependency to be chek w.r.t. current entity perspective where transitive dependecy to be check w.r.t. client's perspective. 
+
+
+_____________________________________________________________________________________________________
+
+AgentDetails(AgentId,FirstName,LastName,City,State,Zipcode,Country,PolicyID,PolicyName,AnnualPremium,ModalPremium,Paymode,CustomerId,CustomerName,Gender,MaritalStatus,StatusForElligble)
+
+Cms(CustomerID,Customername,CCity,CState,VendorId,VendorName,VCity,VState,OrderId,OrderDate,QuantityOrdered,BillAmount,WalletId,WalletName,WalletAmount)
+
+
+
+
+
