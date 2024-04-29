@@ -1,0 +1,145 @@
+1) What is Problem 
+
+2) What is Problem Solving
+
+ Definition: A problem is a puzzle that requires logical thought or mathematics to 
+solve
+ • What is Problem solving ?
+ The act of defining a problem; determining its cause; identifying, prioritizing and 
+selecting alternatives for a solution; and implementing that solution
+
+3) How the problem solving classified
+
+Problem Classification
+ • Concurrent:  Operations overlap in time
+ • Sequential:  Operations are performed in a step-by-step manner
+ • Distributed:  Operations are performed at different locations
+ • Event-Based:  Operations are performed based on the input
+
+Which Problem Solving technique ensures need to follow step by step approach to solve
+
+Sequential
+
+4) Which problem methodology ensures we can write code directly without dealing
+with env.
+
+Brute Force
+
+
+5) Which problem methodology ensures, the code must be efficient and optimized
+
+Greedy
+
+6) Which problem methodology ensures, the problem broken into pieces when its not solved
+
+DIvide and COnquer
+
+7) Difference between Divide and Conquer and Dynamic Programming 
+dynamic programming makes a program as subprogram, each unit will be related to each
+divide and conquer divide the program into disjoint subprograms as each module not related to each
+
+8) What is FlowChart
+
+Graphical reprsentation of the process
+
+Please refer the symbols in the ppt 
+
+1) process
+
+2)input/output
+
+3) variable declaration
+
+4) subroutines
+
+5) continution
+
+Algorithm : Step by step execution of given program.
+
+Properties of Algorithm : 
+
+(i) Finiteness
+
+2) Definiteness
+
+3) Input
+
+4) output
+
+5) Effectiveness
+
+Data Structures : 
+___________________
+
+What is DataStructure : Implements mechanism of Storing/Accessing and Manipulating data in efficient ways.
+
+What are types of Data Structures
+
+Static Data Structures : Arrays 
+
+Dynamic Data Structures : LinkedLIst
+
+	Linear
+
+	Non-Linear : Trees
+
+What is diff. between Arrays and LinkedList
+
+Arrays are best to access the data, where linkedLists are best to Perform Insert/Update and Delete Operations.
+
+Which Search Mechanism is best one
+
+1) Linear Search 2) Binary Search 3) Binary Search Tree Traversal 
+
+Which Ds allows you to store elements as always last element deleted 
+
+STACK
+
+which ds allows you to evaluate mathematic expression syntaxes 
+
+STACK
+
+What is the diff. between LIbear Search and Binary Search
+
+Binary search is more efficeint as every iteration 50% of elements are discarded. 
+
+Which sorting mechansim always checks for small element in list and to be sorted out.
+
+Selection Sort
+
+Which sorting mechasim ensures after first iteration max. value to be placed in correct position
+
+Bubble sort
+
+Which sorting mechasim takes pivot and sorts
+
+QuickSort
+
+Which sorting mechansims follow divide and conquer approach
+
+Merge Sort and Quick Sort
+
+What is tree
+
+Non-linear data structures. 
+
+What are tree traversals 
+
+INOrder
+
+Pre-Order
+
+Post-Order 
+
+*** They gives a diagram and asks for post-order/pre-order/in-order 
+
+
+Tree Travesal technique to balance the tree w.r.t. balance factor is (AVL Tree) 
+
+What is the bench mark for AVL tree balance factor (2 or -2) 
+
+
+
+
+
+
