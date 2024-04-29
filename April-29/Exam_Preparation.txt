@@ -138,6 +138,50 @@ Tree Travesal technique to balance the tree w.r.t. balance factor is (AVL Tree)
 
 What is the bench mark for AVL tree balance factor (2 or -2) 
 
+__________________________________________________________________________________________________
+
+
+1) When the sprint execution completed 
+
+Starts after spring planning and ends before the sprint review 
+
+Sprint Review meeting followed by sprint retrospective meeting then only we say sprint completed. 
+
+2) Who is responsible for Product Catalog 
+
+Product Owner
+
+3) What is the Difference between Product Backlog and Sprint Backlog 
+
+Product backlog contains User-Stories as contains requirements about project. 
+
+Sprint backlog the team accepts the one of user-story from product backlog
+ and divides into tasks, each task will be specified with timelines that is called sprint backlog
+
+5) Goals of Scrum 
+
+Manage Complexity, Unpredictability and change through visibility, Inspection and Adoption 
+
+10) What will happen in Sprint 
+
+    Product Design, Code, and Test, typical duration is from 2 to 4 weeks, but it can't cross calendar month
+
+
+11) What is Daily Standup Meeting 
+
+12) What is Validation and Verification 
+
+13) Agile works on which priorities
+
+MOSCOW 
+
+14) 
+
+
+
+
+
+
 
 
 
