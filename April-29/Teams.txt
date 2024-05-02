@@ -1,0 +1,54 @@
+Team - A
+
+1) Balaji
+2) Parul
+3) Akanksha
+4) Pratham
+5) Huda Shaikh
+
+CarConnect
+
+Team - B
+_________
+
+Pramoditha
+Mayuri
+Hari Bhaskar
+Satyam
+Yashwanthi
+
+Crime Report System
+
+Team - C
+_________
+
+Sadhana
+Allan
+Sai Rakesh
+Shivendra
+Anu Priya
+
+PayXpert
+
+Team - D
+_________
+
+Vikram
+Vishnu
+Gladis
+Nandini
+Yoga Priya
+
+Transport Management
+
+Team - E
+_________
+
+Naga Tejaswini
+Vasanthi
+Madhushree
+Aasiya Khan
+Soumya Mahajan
+PriyaDarshan
+
+Asset Management
