@@ -1,0 +1,142 @@
+Access Modifiers : 
+____________________
+
+
+private	: Allows you to access members within current class. 
+
+public  : Allows you to access members in entire application.
+
+protected : Allows you to access members within current/derived class. 
+
+friendly : By default java possess friendly access modifier, allows you to access members within all classes of current package. 
+
+The top level class in java is Object
+
+the default package in java is java.lang
+
+You can define a method in java as
+
+access_modifier return_type method_name(par(s)) {
+...
+...
+...
+}
+
+How to create an object 
+
+You can create an object to the class as 
+
+class_name object = new class_name();
+
+Control Structures : 
+_____________________
+
+Used to define the flow of the program. There are 2 types of control structures 
+known as 
+
+(i) Branching : Executes the statement(s) based on the condition. 
+
+if...else : Executes the statements(s) based on the condition. 
+
+if (condition) {
+	statement(s);
+} else {
+	statement(s);
+}
+
+if (condition) {
+	statement(s);
+} else if (condition) {
+	statemnet(s);
+} else if (condition) {
+	statement(s);
+} else {
+    statement(s);
+}
+
+switch...case : Used to define menu-driven programs. 
+
+switch(expression) {
+	case expression1 :
+		statement(s);
+		break;
+	case expression2 : 
+		statement(s);
+		break;
+	case expression3 : 
+		statement(s);
+		break;
+	....
+	....
+	....
+	default : 
+		statement(s);
+		break;
+}
+
+
+
+(ii) Looping : 
+
+while loop : This loop executes all the statement(s) repeatedly until the condition remains true, if the condition remains false, then it comes out of the loop. 
+
+For every loop, basically there are 3 phases known as 
+
+	(i) Initialization : Performed at the beginning of the loop.
+
+	(ii) Condition  : Performed at the conditional part of the loop.
+
+	(iii) Increment/Decrement : Performed before closing the loop. 
+
+while(condition) {
+   statement(s);
+}
+
+for loop : This loop executes all the statement(s) repeatedly until the condition remains true, if the condition remains false, then it comes out of the loop. 
+
+for(initialization;condition;increment/decrement) {
+   statement(s);
+}
+
+_________________________________________________________________________________
+
+Arrays : An array is the finite ordered set of homogeneous elements, means 
+all the elements belongs to same data type. 
+
+All the elements of array are stored in successive memory locations. 
+
+int[] a = new int[]{5,23,6,21,3};
+
+a[0]=5;
+a[1]=23;
+a[2]=6;
+a[3]=21;
+a[4]=3;
+
+int[] a = new int[] {4,22,55,12,6};
+//		for(int i=0;i<a.length;i++) {
+//			System.out.println(a[i]);
+//		}
+		for (int i : a) {
+			System.out.println(i);
+		}
+
+How the way internally foreach loop will work ??
+
+
+in foreach loop at first i points to the first element in array A, after processing
+first element it checks next element is there or not by using hasMoreElements(), if hasMoreElements() returns true, it move to the next element by using nextElement(). It repeats as soon as hasMoreElements() returns true. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

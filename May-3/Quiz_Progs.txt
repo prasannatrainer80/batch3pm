@@ -1,0 +1,53 @@
+class Hello {
+	public static void main(String[] args) {
+	   int x = 12;
+	   int y = x++ + ++x + --x + x++ - --x - x--;
+	   A   12  + 14  + 13 + 13  - 13   - 13
+	   M   13    14    13   14    13     12
+	   System.out.println(y);
+	}
+}
+
+class Test {
+	public static void main(String[] args) {
+	    int ch='A';
+	    System.out.println(ch);
+	}
+}
+
+class Quiz1 {
+	public static void main(String[] args) {
+	  boolean flag;
+	  int x = 5, y = 7;
+	  flag = (x > 3 && y < 7);
+	  System.out.println(flag);
+	  flag = (x > 3 || y < 7);
+	  System.out.println(flag);
+	}
+}
+
+class Quiz2 {
+	public static void main(String[] args) {
+	   int x =9;
+	   while(x < 10) {
+	     System.out.println("Hi");
+	     x--;
+	   }
+	}
+}
+
+
+class Test {
+	public static void main(String[] args) {
+	  String str="Hello";
+	  str.concat(" World");
+	  System.out.println(str);
+	}
+}
+
+The above code display Hello only as Strings are immutable, as once they are
+assigned we cannot alter the value by using any string methods. 
+
+
+
+
