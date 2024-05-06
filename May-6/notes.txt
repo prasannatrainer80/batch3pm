@@ -112,6 +112,95 @@ super : If you want to pass values from derived class to base class, then we nee
 	(ii) super as a constrcutor 
 
 
+what is boxing and unboxing 
+
+Object
+
+What is top level class in java Object
+
+What is the default package in java
+
+Methods of Object class 
+
+	-> hashCode() : Displays memory location address number.
+
+	-> toString() : Print member variables of the class. This method will be called automatically once
+		you print the object.
+
+	-> getClass() : Print the datatype from Object class.
+
+	-> equals()
+
+what is the diff. between == and equals() 
+
+== always checks the address and equals() checks the content.
+
+for primitive types it will check, but for user-defined classes, 
+we need to override the equals method, and there we need to specify on 
+what field basis we are checking for equality. 
+If you don't override equals() and == will behave in the same way. 
+
+how to make any constant 
+
+final keyword; 
+
+final variables cannot be modified
+final class cannot be inherited
+final methods cannot be overrided. 
+
+
+
+enums : Contains group of constant values. 
+
+Car[] arr = new Car[] {
+   new Maruthi("Scross",58234),
+   new Audi("Audi552",88882)
+};
+
+String (vs) StringBuilder : 
+
+Strings are immutable, as once they are assigned, we cannot change the value by using any string methods. 
+
+for this we have StringBuilder as it is mutable class, we can perform any 
+changes in that current object using methods. 
+
+Abstract Class : A class that which can be created, but not implemented and instantiated known as abstract class.  Abstract class contains abstract and non-abstract methods, and abstract methods needs to be overrided mandetorily by the derived class. 
+
+You cannot create an object to the abstract class. 
+
+abstract class class_name {
+   abstract method1();
+   abstract method2();
+}
+
+Will abstract class contains constructors ???
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
