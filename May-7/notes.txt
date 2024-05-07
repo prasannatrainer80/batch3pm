@@ -1,0 +1,106 @@
+Drawback with Arrays : 
+
+Arrays are static data structures, means once the size initialized we cannot alter the size. 
+
+Sometimes we need to insert data irrespective of size, then we need the help of collections. 
+
+Collections can grow to any size unlike arrays. 
+
+collections are from java.util package 
+
+Scanner class : This class allows you to read data from keyboard/file. 
+
+Scanner sc = new Scanner(System.in);
+
+nextInt()
+nextDouble()
+next()
+nextLine()
+
+Collections stores data in Object format, as we need to unbox it whenever we need. 
+
+Collections are defined from Iterable interface, from Iterable to Collection and from that top 3 levels of interfaces as List, Queue and Set 
+
+There are 3 top level interfaces in collections as 
+
+1) List   : Contains List of elements. ArrayList, LinkedList, Vector are falling under List Interface 
+
+2) Set : Allows you to eliminate duplicate entries from the given collection. 
+
+		HashSet and LinkedHashSet are falling under Set interface. 
+
+HashSet displays data in random order, where LinkedHashSet displays data in 
+insertion order. 
+
+3) SortedSet : This interface allows you to sort data.  TreeSet is falling under
+		SortedSet interface. 
+
+Exception in thread "main" java.lang.ClassCastException: class com.java.cols.Employ cannot be cast to class java.lang.Comparable (com.java.cols.Employ is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+	at java.base/java.util.TreeMap.compare(TreeMap.java:1569)
+	at java.base/java.util.TreeMap.addEntryToEmptyMap(TreeMap.java:776)
+	at java.base/java.util.TreeMap.put(TreeMap.java:785)
+	at java.base/java.util.TreeMap.put(TreeMap.java:534)
+	at java.base/java.util.TreeSet.add(TreeSet.java:255)
+	at com.java.cols.SortEmploy.main(SortEmploy.java:9)
+
+
+Comparator : this interface used to define the sort parameters for the given class. It needs to override compare method, there we need to write code to sort. 
+
+We need to write this class separately and need to call in main program. 
+
+For Sorting, we have 2 interfaces as
+
+Comparable and Comparator 
+
+Comparable interface to be implemented on the same class, we need to override compareTo() method.
+
+The default sorting parameter to be specified in Comparable interface. 
+
+Generics : 
+__________
+
+The major drawback with collections are 
+
+collections can take any kind of data, as it holds data in Object format. 
+
+This leads to security leackage as type safety cannot be implemented. 
+
+Example, if i have list that contains Customer Records, then in that 
+we cannot prevent any other data to insert. 
+
+To overcome this problem we need the help of generics. 
+
+Generics provides an opportunity to define data types at runtime. 
+
+If you want to write any method as write once and apply for all types, then 
+we need the help of Generics. 
+
+Generics are represented using <T>. means in place of <T> we can pass any
+value type or reference type or custom type. 
+
+Advantages : 
+____________
+
+	-> Write Once and apply for all types
+
+	-> Provides security to the data (Type Safety)
+
+	-> No Typecasting required
+
+	-> Reduces the size of the program.
+
+Map interface : Allow syou 
+
+
+
+
+
+_________________________________________________________________________________________
+
+
+Give me 5 mns we resume 
+
+
+
+
+
