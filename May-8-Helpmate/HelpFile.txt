@@ -45,3 +45,14 @@ Connection connection;
 		}
 		return employList;
 	}
+
+EmployDao dao = new EmployDaoImpl();
+		try {
+			List<Employ> employList = dao.showEmployDao();
+			for (Employ employ : employList) {
+				System.out.println(employ);
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
