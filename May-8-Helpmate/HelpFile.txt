@@ -8,3 +8,14 @@ public static String getConnectionString(String propertyFile) {
 		String connStr = rb.getString("url");
 		return connStr;
 	}
+
+
+public static Connection GetConnection(String connStr) throws ClassNotFoundException, SQLException {
+		ResourceBundle rb = ResourceBundle.getBundle("db");
+		String driver = rb.getString("driver");
+		String user = rb.getString("user");
+		String pwd = rb.getString("password");
+		Class.forName(driver);
+		Connection con = DriverManager.getConnection(connStr, user, pwd);
+		return con;
+	}
