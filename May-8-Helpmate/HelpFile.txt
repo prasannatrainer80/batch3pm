@@ -19,3 +19,29 @@ public static Connection GetConnection(String connStr) throws ClassNotFoundExcep
 		Connection con = DriverManager.getConnection(connStr, user, pwd);
 		return con;
 	}
+
+
+Connection connection;
+	PreparedStatement pst;
+	
+	@Override
+	public List<Employ> showEmployDao() throws ClassNotFoundException, SQLException {
+		String connStr = DBPropertyUtil.getConnectionString("db");
+		connection = DBConnUtil.GetConnection(connStr);
+		String cmd = "select * from Employ";
+		pst = connection.prepareStatement(cmd);
+		ResultSet rs = pst.executeQuery();
+		List<Employ> employList = new ArrayList<Employ>();
+		Employ employ = null;
+		while(rs.next()) {
+			employ = new Employ();
+			employ.setEmpno(rs.getInt("empno"));
+			employ.setName(rs.getString("name"));
+			employ.setGender(Gender.valueOf(rs.getString("gender")));
+			employ.setDept(rs.getString("dept"));
+			employ.setDesig(rs.getString("desig"));
+			employ.setBasic(rs.getDouble("basic"));
+			employList.add(employ);
+		}
+		return employList;
+	}
