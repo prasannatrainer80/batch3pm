@@ -2,3 +2,9 @@ driver=com.mysql.cj.jdbc.Driver
 url=jdbc:mysql://localhost:3306/hexapractice
 user=root
 password=root
+
+public static String getConnectionString(String propertyFile) {
+		ResourceBundle rb = ResourceBundle.getBundle(propertyFile);
+		String connStr = rb.getString("url");
+		return connStr;
+	}
