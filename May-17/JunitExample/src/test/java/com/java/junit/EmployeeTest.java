@@ -10,11 +10,16 @@ import org.junit.Test;
 public class EmployeeTest {
 
 	@Test
-	public void testToString() {
+	public void testToString() throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Employee emp1 = new Employee(1, "Sadhana", "Madina","Female", "sadhana@gmail.com", 
 				"9933993399", "Tekkali", "SWE", sdf.parse("2000-10-10"), sdf.parse("2024-05-01"), 
 				sdf.parse("2055-10-10"));
+		String result = "Employee [employeeID=1, firstName=Sadhana, lastName=Madina, gender=Female, "
+				+ "email=sadhana@gmail.com, phoneNumber=9933993399, address=Tekkali, position=SWE, "
+				+ "dateOfBirth=Tue Oct 10 00:00:00 IST 2000, joiningDate=Wed May 01 00:00:00 IST 2024, "
+				+ "terminationDate=Sun Oct 10 00:00:00 IST 2055]";
+		assertEquals(emp1.toString(), result);
 	}
 	
 	@Test

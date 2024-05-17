@@ -1,14 +1,16 @@
 package com.java.junit;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 public class App {
 
-  public static void main(String[] args) {
-    System.out.println("Hello World!");
-    Employ employ1 = new Employ(1, "Mayuri", Gender.FEMALE, "Java", 
-			 "Programmer", 88832.44);
-    System.out.println(employ1);
-    String result = "Employ [empno=1, name=Mayuri, gender=FEMALE, "
-    		+ "dept=Java, desig=Programmer, basic=88832.44]";
+  public static void main(String[] args) throws ParseException {
+	  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Employee emp1 = new Employee(1, "Sadhana", "Madina","Female", "sadhana@gmail.com", 
+				"9933993399", "Tekkali", "SWE", sdf.parse("2000-10-10"), sdf.parse("2024-05-01"), 
+				sdf.parse("2055-10-10"));
+		System.out.println(emp1.toString());
   }
 
 }
