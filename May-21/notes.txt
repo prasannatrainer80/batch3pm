@@ -1,0 +1,107 @@
+
+Cloud Computing : It is an internet based computing service, in which large groups of remote servers are networked to allow centralized data storage. For that we can provie access to services and resources.
+
+Using cloud computing, organizations can use shared computing and storage resources rather than building, operating, and improving infrastructure on their own. 
+
+
+Cloud Computing is a combination of 
+
+	-> Mobile 
+	-> Applications
+	-> Database
+	-> Storage
+	-> Servers
+	
+Features : 
+__________
+
+	-> User can have provision and release resources on demand.
+
+	-> Resources acn be scaled up automatically depending on the load
+
+	-> Resources are accessaible over a network with proper security
+
+	-> Cloud service providers can enable a pass-as-you-go model, where customers are charged based on
+		the thype of resources and per usage. 
+
+	Types of Cloud
+
+		-> Deployment Model  
+
+			(a) public cloud  : 
+
+				-> Scalable
+
+				-> Reliable
+
+				-> Inexpensive
+
+				-> Location Dependent
+
+		In public cloud the thrid party providers make resources and services avaialble to their
+			customers via internet. Customer's data and related security is with service providers owned infrastructure.
+
+			(b) private cloud
+
+				-> Scalable
+
+				-> Secure 
+
+				- Flexible
+
+				-> You have your own control
+
+		Provide cloud also provides almost similar features as public cloud, but the data and services are managed by the org. or by the third party only for the customer's org. In this cloud, major control is over the infra. so security related issues are minimized. 
+
+			(c) Hybrid Cloud
+
+				Scalable
+
+				Secure
+
+				Flexible
+
+				Cost Effective
+
+		Hybrid cloud is combination of both private and public cloud, the decision to run on private or public clould depends on various parameters like sensitivity of data and applications. 
+
+		-> Service Model
+
+
+Cloud Service Models : 
+______________________
+
+
+	There are three types of service models in cloud
+
+	-> IAAS (Infrastructure as a Service)   Server Storage Network and Infrastructure & Network Architects 
+
+	-> PAAS (Platform as a Service) Operating System & Application softwares compatabile to the OS etc...
+
+	-> SAAS (Software as a Service) Packaged Software OS & APlication stacks like (eclipsed, vscode, mysql) these softwares are deployed 
+				those cloud labs are ready to use. 
+
+SAAS will be used by end users
+PAAS will be used by Application Developers
+IAAS will be by Network Architects.
+
+
+What is Azure 
+	
+	Microsft azure is a set of cloud services to build, manage and deploy applciations on a network with help of tools and frameworks. 
+
+It contains DataCenter as centralized location where computing and networking equipment is concentrated for storing, processing and distributing large volume of data. 
+
+
+Azure contains lot of services as
+
+
+-> Computed Services for build level products  Contains Virtual Machine 
+
+
+
+
+What is Architecture 
+
+Demo to create azure virtual machine
+
