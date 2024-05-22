@@ -1,0 +1,9 @@
+use sonixpractice;
+
+create table UserData
+(
+	userName varchar(30) primary key,
+    passCode varchar(30) NOT NULL
+);
+
+Insert into UserData values('Manohar','Manohar'),('Rajesh','Battula'),('Chandra','Sekhar');
